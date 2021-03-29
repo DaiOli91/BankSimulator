@@ -3,16 +3,16 @@ package classes;
 import java.util.ArrayList;
 
 public class Client extends Person{
-    private static int clientCount;
-    private String idClient;
+    private static int clientCount = 0;
+    private String clientId;
     private ArrayList<String> accountsIds; //the client may have several accounts
 
     public Client() {
-        this.idClient = addClientCount();
+        this.clientId = addClientCount();
         this.accountsIds= new ArrayList<>();
     }
-    public Client(String idClient, String idAccount) {
-        this.idClient = idClient;
+    public Client(String clientId, String idAccount) {
+        this.clientId = clientId;
         this.accountsIds= new ArrayList<>();
         this.accountsIds.add(idAccount);
     }
@@ -20,14 +20,15 @@ public class Client extends Person{
     private static int getClientCount() {
         return clientCount;
     }
+
     private static String addClientCount() {
         clientCount++;
         return String.valueOf(clientCount);
     }
 
 
-    public String getIdClient() {
-        return idClient;
+    public String getClientId() {
+        return clientId;
     }
 /*
     public String getIdAccount() {
