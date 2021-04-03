@@ -70,7 +70,7 @@ public abstract class Employee extends Person implements ICalculateSalary {
     public void setEmployeeId(){ //generates a random UUID value in case the existent value already exists in the wrapper list
         UUID aux_employeeId;
         aux_employeeId = UUID.randomUUID();
-        this.employeeId = aux_employeeId.toString().substring(0, 9); //I just need 10 digits string
+        this.employeeId = aux_employeeId.toString().substring(0, 8); //I just need 10 digits string
     }
 
     ////////////////// OVERRIDDEN

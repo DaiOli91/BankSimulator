@@ -11,6 +11,7 @@ public class BankSystem {
     }
 
     public void Menu (Scanner scan){
+        System.out.println("Welcome to LocalBank, please select an option to start operating");
 
     }
 }
