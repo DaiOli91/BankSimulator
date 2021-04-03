@@ -34,6 +34,17 @@ public class Client extends Person{
     public String getIdAccount() {
         return idAccount;
     }
+
+    public String generarString(int length) {
+        while(this.nroSocio.length() < length) {
+            int aux_nroSocio = (char)((int)(Math.random() * 57.0D + 48.0D));
+            if (aux_nroSocio <= '9' && aux_nroSocio >= '0') {
+                this.nroSocio = this.nroSocio + (char)aux_nroSocio;
+            }
+        }
+
+        return this.nroSocio;
+    }
 */
     public void addIdAccount(String idAccount) {
         this.accountsIds.add(idAccount);
