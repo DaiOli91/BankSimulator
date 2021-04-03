@@ -64,16 +64,10 @@ public class AdministrativeEmployee extends Employee {
     }
 
     @Override
-    public double increaseSalary(double percentage) {
-        return 0;
-    }
-
-    @Override
     public String toString() {
-        return super.toString() + "AdministrativeEmployee{" +
-                "experience=" + experience +
-                ", actualSalary=" + actualSalary +
-                '}';
+        return super.toString() + "Area: Administration" +
+                "Years of Experience: " + experience + "\n" +
+                "Actual Salary: " + actualSalary + "\n";
     }
 
 }

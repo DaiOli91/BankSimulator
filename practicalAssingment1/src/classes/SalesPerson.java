@@ -65,15 +65,10 @@ public class SalesPerson extends Employee {
         return Employee.salary * 12;
     }
 
-    @Override
-    public double increaseSalary(double percentage) {
-        return 0;
-    }
 
     @Override
     public String toString() {
-        return super.toString() + "SalesPerson{" +
-                "monthlySales=" + monthlySales +
-                '}';
+        return super.toString() + "Area: Sales \n" +
+                "Monthly Sales:" + monthlySales + "\n";
     }
 }

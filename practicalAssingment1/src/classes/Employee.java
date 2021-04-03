@@ -76,12 +76,16 @@ public abstract class Employee extends Person implements ICalculateSalary {
     ////////////////// OVERRIDDEN
     @Override
     public String toString() {
-        return super.toString() + "Employee{" +
-                "employeeId='" + employeeId + '\'' +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
-                ", salary=" + salary +
-                '}';
+        return super.toString() +
+                "Employee number: " + employeeId + "\n" +
+                "From: " + startDate + "\n" +
+                "To: " + endDate + "\n" +
+                "Basic salary: " + salary + "\n";
+    }
+    @Override
+    public double increaseSalary(double percentage) {
+        this.salary = salary * (percentage * 0.01);
+        return this.salary;
     }
 
     ////////////////// OTHERS

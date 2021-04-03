@@ -85,6 +85,6 @@ public abstract class Person {
                 "Last Name: " + lastName + "\n" +
                 "DNI: " + idNumber + "\n" +
                 "Nationality: " + nationality + "\n" +
-                "BirthDate: " + birthDate + "\n\n";
+                "BirthDate: " + birthDate + "\n";
     }
 }
