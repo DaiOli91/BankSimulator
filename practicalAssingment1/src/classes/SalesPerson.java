@@ -2,7 +2,7 @@ package classes;
 
 import java.time.LocalDate;
 
-public class SalesPerson extends Employee{
+public class SalesPerson extends Employee {
     private int monthlySales;
     private static double comission = 253.5; // ideallly, SalesPerson has a list of sold items, each with its own price and the employee gets paid a percentage of each final price
     //in this case, the SalesPerson will only get comission if monthlySales > 40.
@@ -24,7 +24,7 @@ public class SalesPerson extends Employee{
     @Override
     public double annualSalary() {
 
-        return Employee.salary*12;
+        return Employee.salary * 12;
     }
 
     @Override

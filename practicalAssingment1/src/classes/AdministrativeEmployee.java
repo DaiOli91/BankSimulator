@@ -4,23 +4,31 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 
-public class AdministrativeEmployee extends Employee{
+public class AdministrativeEmployee extends Employee {
     private double experience;
     private double actualSalary;
 
+    ////////////////// CONSTRUCTORS
     public AdministrativeEmployee() {
         super();
         this.experience = 0; //in years
     }
+
     public AdministrativeEmployee(LocalDate startDate, LocalDate endDate, double salary, double experience) {
         super(startDate, endDate, salary);
         this.experience = experience;
     }
 
+    ////////////////// GETTERS
     public double getExperience() {
         return experience;
     }
 
+    public double getActualSalary() {
+        return actualSalary;
+    }
+
+    ////////////////// SETTERS
     //TODO search for a method to modify start and end dates to calculate experience w/o SimpleDateFormat
     public void setExperience() {
         LocalDate today = LocalDate.now();
@@ -34,31 +42,38 @@ public class AdministrativeEmployee extends Employee{
         this.experience = thisYear - startYear;
     }
 
-    public double getActualSalary() {
-        return actualSalary;
-    }
-
     public void setActualSalary() { //calculates 10% for less than 4 years of experience, 15% up to 15 years and 25% for the rest
         double percentage;
-        if (this.experience <= 4 ) {
+        if (this.experience <= 4) {
             percentage = 1.1;
-            this.actualSalary = super.getSalary()*percentage;
+            this.actualSalary = super.getSalary() * percentage;
         } else if (this.experience > 4 && this.experience <= 15) {
-                percentage = 1.15;
-            }
-        else {
+            percentage = 1.15;
+        } else {
             percentage = 1.25;
         }
-            this.actualSalary = super.getSalary()*percentage;
+        this.actualSalary = super.getSalary() * percentage;
     }
 
+    ////////////////// OTHERS
+
+    ////////////////// OVERRIDDEN
     @Override
     public double annualSalary() {
-        return this.actualSalary*12;
+        return this.actualSalary * 12;
     }
 
     @Override
     public double increaseSalary(double percentage) {
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return "AdministrativeEmployee{" +
+                "experience=" + experience +
+                ", actualSalary=" + actualSalary +
+                '}';
+    }
+
 }
