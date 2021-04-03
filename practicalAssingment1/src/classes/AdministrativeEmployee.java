@@ -1,7 +1,8 @@
 package classes;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class AdministrativeEmployee extends Employee{
     private double experience;
@@ -11,7 +12,7 @@ public class AdministrativeEmployee extends Employee{
         super();
         this.experience = 0; //in years
     }
-    public AdministrativeEmployee(Date startDate, Date endDate, double salary, double experience) {
+    public AdministrativeEmployee(LocalDate startDate, LocalDate endDate, double salary, double experience) {
         super(startDate, endDate, salary);
         this.experience = experience;
     }
@@ -20,8 +21,9 @@ public class AdministrativeEmployee extends Employee{
         return experience;
     }
 
+    //TODO search for a method to modify start and end dates to calculate experience w/o SimpleDateFormat
     public void setExperience() {
-        Date today = new Date();
+        LocalDate today = LocalDate.now();
         SimpleDateFormat spd = new SimpleDateFormat("yyyy"); //to bring only the year of this date as a String
         int thisYear;
         thisYear = Integer.parseInt(spd.format(today).toUpperCase()); //parseInt to transform String to int
