@@ -76,7 +76,7 @@ public abstract class Employee extends Person implements ICalculateSalary {
     ////////////////// OVERRIDDEN
     @Override
     public String toString() {
-        return "Employee{" +
+        return super.toString() + "Employee{" +
                 "employeeId='" + employeeId + '\'' +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +

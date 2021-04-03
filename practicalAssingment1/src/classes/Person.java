@@ -14,13 +14,13 @@ public abstract class Person {
     ////////////////// CONSTRUCTORS
     public Person() {
         this.firstName = "";
-        this.setEmployeeId();
+        this.setIdNumber();
         this.lastName = "";
         this.nationality = "";
         this.birthDate = LocalDate.now(); //LocalDate and LocalDateTime do not have Constructors, use static methods to set the date
     }
     public Person(String firstName, String lastName, String nationality, LocalDate birthDate) {
-        this.setEmployeeId();
+        this.setIdNumber();
         this.firstName = firstName;
         this.lastName = lastName;
         this.nationality = nationality;
@@ -50,12 +50,13 @@ public abstract class Person {
 
 
     ////////////////// SETTERS
+    public void setIdNumber() { //generates a new random number and converts it to String
+            String aux_IdNumber="";
 
-    public void setEmployeeId() { //generates a new random number in case this value already exists in a wrapper class
-        UUID aux_idNumber;
-        aux_idNumber = UUID.randomUUID();
-        this.idNumber = aux_idNumber.toString().substring(0, 9); //I just need 10 digits long string
-    }
+                aux_IdNumber = String.valueOf(Math.random() * 10 + 48); //generates the double
+
+            this.idNumber = aux_IdNumber.substring(3, 11); //chooses just a part of the decimals
+        }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -80,12 +81,10 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "idNumber='" + idNumber + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", nationality='" + nationality + '\'' +
-                ", birthDate=" + birthDate +
-                '}';
+        return "First Name: " + firstName + "\n" +
+                "Last Name: " + lastName + "\n" +
+                "DNI: " + idNumber + "\n" +
+                "Nationality: " + nationality + "\n" +
+                "BirthDate: " + birthDate + "\n\n";
     }
 }

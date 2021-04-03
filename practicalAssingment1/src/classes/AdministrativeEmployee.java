@@ -70,7 +70,7 @@ public class AdministrativeEmployee extends Employee {
 
     @Override
     public String toString() {
-        return "AdministrativeEmployee{" +
+        return super.toString() + "AdministrativeEmployee{" +
                 "experience=" + experience +
                 ", actualSalary=" + actualSalary +
                 '}';
