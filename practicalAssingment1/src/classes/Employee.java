@@ -1,13 +1,14 @@
 package classes;
 
 import interfaces.ICalculateSalary;
+import jdk.jfr.Description;
 
 import java.time.LocalDate;
 import java.util.Objects;
 import java.util.UUID;
 
 
-public abstract class Employee extends Person implements ICalculateSalary {
+public class Employee extends Person implements ICalculateSalary {
     private static int idCount = 0;
     private String employeeId;
     private LocalDate startDate;
@@ -15,9 +16,9 @@ public abstract class Employee extends Person implements ICalculateSalary {
     protected static double salary = 53600;
 
     ////////////////// CONSTRUCTORS
+    //@Description("set employeeId as empty")
     public Employee() {
-        addIdCount();
-        this.setEmployeeId();
+        this.employeeId = "";
         this.startDate = LocalDate.now();
         this.endDate = LocalDate.now();
     }
@@ -83,6 +84,12 @@ public abstract class Employee extends Person implements ICalculateSalary {
                 "To: " + endDate + "\n" +
                 "Basic salary: " + salary + "\n";
     }
+
+    @Override
+    public double annualSalary() {
+        return 0;
+    }
+
     @Override
     public double increaseSalary(double percentage) {
         Employee.salary = salary * (percentage * 0.01);
