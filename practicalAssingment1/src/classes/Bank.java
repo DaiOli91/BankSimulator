@@ -5,24 +5,25 @@ import classes.Client;
 import classes.Employee;
 
 import java.util.HashMap;
-import java.util.HashSet;
 
 public class Bank {
-    private HashSet<Employee> bankEmployees;
+    private HashMap<String, Employee> bankEmployees;
     private HashMap<String, BankAccount> accounts;
     private HashMap<String, Client> clients;
 
     ////////////////// CONSTRUCTORS
     public Bank() {
-        this.bankEmployees  = new HashSet<>();
+        this.bankEmployees  = new HashMap<String, Employee>();
         this.accounts = new HashMap<String, BankAccount>(); // where key is accountId
         this.clients = new HashMap<String, Client>(); //where key is clientId
     }
 
     ////////////////// GETTERS
 
-    public HashSet<Employee> getBankEmployees() {
-        return bankEmployees;
+    public String getBankEmployees() {
+        StringBuilder sb = new StringBuilder();
+
+        return "";
     }
 
     public HashMap<String, BankAccount> getAccounts() {
@@ -35,9 +36,10 @@ public class Bank {
 
 
     ////////////////// SETTERS
-
-    public void setBankEmployees(HashSet<Employee> bankEmployees) {
-        this.bankEmployees = bankEmployees;
+    //TODO methods here
+/*
+    public boolean addEmployee(Employee bankEmployee) {
+        return this.bankEmployees;
     }
 
     public void setAccounts(HashMap<String, BankAccount> accounts) {
@@ -47,7 +49,7 @@ public class Bank {
     public void setClients(HashMap<String, Client> clients) {
         this.clients = clients;
     }
-
+*/
 
     ////////////////// OTHERS
 
