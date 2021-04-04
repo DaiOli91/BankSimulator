@@ -11,8 +11,7 @@ public class BankAccount {
 
     ////////////////// CONSTRUCTORS
     public BankAccount() { //default type = 2 : Salary Account- Balance= 0;
-        addBankAccountCounter();
-        this.setIdAccount();
+        this.idAccount = "";
         this.balance = 0;
         this.type = 2;
     }

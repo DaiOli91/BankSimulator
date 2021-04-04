@@ -17,9 +17,7 @@ public class Client extends Person {
 
     ////////////////// CONSTRUCTORS
     public Client() {
-        addClientCount();
-        //generateClientId();
-        this.setClientId();
+        this.clientId = "";
         this.accountsIds = new HashSet<>();
     }
 
