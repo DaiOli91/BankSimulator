@@ -1,5 +1,6 @@
 package classes;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class BankAccount {
@@ -89,5 +90,18 @@ public class BankAccount {
                 ", balance=" + balance +
                 ", type=" + type +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BankAccount)) return false;
+        BankAccount that = (BankAccount) o;
+        return getIdAccount().equals(that.getIdAccount());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getIdAccount());
     }
 }

@@ -5,6 +5,7 @@ import jdk.jfr.Description;
 import java.lang.annotation.Documented;
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.UUID;
 
 public class Client extends Person {
@@ -89,5 +90,18 @@ public class Client extends Person {
                 "clientId='" + clientId + '\'' +
                 ", accountsIds=" + accountsIds +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Client)) return false;
+        Client client = (Client) o;
+        return getClientId().equals(client.getClientId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getClientId());
     }
 }

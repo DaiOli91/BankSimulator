@@ -3,6 +3,7 @@ package classes;
 import interfaces.ICalculateSalary;
 
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.UUID;
 
 
@@ -84,8 +85,21 @@ public abstract class Employee extends Person implements ICalculateSalary {
     }
     @Override
     public double increaseSalary(double percentage) {
-        this.salary = salary * (percentage * 0.01);
-        return this.salary;
+        Employee.salary = salary * (percentage * 0.01);
+        return Employee.salary;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee)) return false;
+        Employee employee = (Employee) o;
+        return getEmployeeId().equals(employee.getEmployeeId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getEmployeeId());
     }
 
     ////////////////// OTHERS
