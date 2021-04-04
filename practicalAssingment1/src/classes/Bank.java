@@ -5,6 +5,9 @@ import classes.Client;
 import classes.Employee;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 public class Bank {
     private HashMap<String, Employee> bankEmployees;
@@ -72,16 +75,40 @@ public class Bank {
 
     ////////////////// OTHERS
     public Employee getEmployee(String employeeId){
-        return this.bankEmployees.get(employeeId);
+        if(this.bankEmployees.containsKey(employeeId)) {
+            return this.bankEmployees.get(employeeId);
+        } else {
+            Employee aux_employee = new Employee();
+
+            return aux_employee;
+
+        }
     }
+
 
     public BankAccount getAccount(String accountId){
-        return this.accounts.get(accountId);
+        if(this.accounts.containsKey(accountId)) {
+            return this.accounts.get(accountId);
+        } else {
+            BankAccount aux_account = new BankAccount();
+
+            return aux_account;
+
+        }
     }
 
+
     public Client getClient(String clientId){
-        return this.clients.get(clientId);
+        if(this.clients.containsKey(clientId)) {
+            return this.clients.get(clientId);
+        } else {
+            Client aux_client = new Client();
+
+            return aux_client;
+
+        }
     }
+
 
     public Employee addEmployee(Employee bankEmployee) {
         return this.bankEmployees.put(bankEmployee.getEmployeeId(), bankEmployee);
@@ -100,12 +127,58 @@ public class Bank {
 
 
     @Override
-    public String toString() {
-        return "Bank{" +
-                "bankEmployees=" + bankEmployees +
-                ", accounts=" + accounts +
-                ", clients=" + clients +
-                '}';
+    public String toString() { //bank
+        StringBuilder sb =  new StringBuilder();
+        sb.append(employeesToString());
+        sb.append(bankAccountsToString());
+        sb.append(clientsToString());
+        return sb.toString();
+    }
+
+
+    public String employeesToString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nEmployees list\n");
+        Set<Map.Entry<String, Employee>> setAux = this.bankEmployees.entrySet();
+        Iterator<Map.Entry<String, Employee>> itAux = setAux.iterator();
+
+        while (itAux.hasNext()){
+            Map.Entry<String, Employee> map_entry = (Map.Entry<String, Employee>) itAux.next();
+            Employee auxEmployee = (Employee) map_entry.getValue();
+            sb.append(auxEmployee.toString());
+        }
+        sb.append("\n\n");
+        return sb.toString();
+    }
+
+    public String bankAccountsToString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nAccounts list\n");
+        Set<Map.Entry<String, BankAccount>> setAux = this.accounts.entrySet();
+        Iterator<Map.Entry<String, BankAccount>> itAux = setAux.iterator();
+
+        while (itAux.hasNext()){
+            Map.Entry<String, BankAccount> map_entry = (Map.Entry<String, BankAccount>) itAux.next();
+            BankAccount auxAccount = (BankAccount) map_entry.getValue();
+            sb.append(auxAccount.toString());
+        }
+        sb.append("\n\n");
+        return sb.toString();
+    }
+
+    public String clientsToString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nClients list\n");
+        Set<Map.Entry<String, Client>> setAux = this.clients.entrySet();
+        Iterator<Map.Entry<String, Client>> itAux = setAux.iterator();
+
+        while (itAux.hasNext()){
+            Map.Entry<String, Client> map_entry = (Map.Entry<String, Client>) itAux.next();
+            Client auxClient = (Client) map_entry.getValue();
+            sb.append(auxClient.toString());
+        }
+        sb.append("\n\n");
+        return sb.toString();
     }
 
 }
