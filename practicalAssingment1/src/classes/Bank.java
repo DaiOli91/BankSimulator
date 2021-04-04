@@ -36,22 +36,65 @@ public class Bank {
 
 
     ////////////////// SETTERS
-    //TODO methods here
-/*
-    public boolean addEmployee(Employee bankEmployee) {
-        return this.bankEmployees;
+
+    public Employee editEmployee(Employee bankEmployee) {
+        if(this.bankEmployees.containsKey(bankEmployee.getEmployeeId())) {
+            return this.bankEmployees.put(bankEmployee.getEmployeeId(), bankEmployee);
+        } else {
+            Employee aux_employee = new Employee();
+
+            return aux_employee;
+
+        }
     }
 
-    public void setAccounts(HashMap<String, BankAccount> accounts) {
-        this.accounts = accounts;
+    public BankAccount editAccount(BankAccount account) {
+        if(this.accounts.containsKey(account.getIdAccount())) {
+            return this.accounts.put(account.getIdAccount(), account);
+        } else {
+            BankAccount aux_account = new BankAccount();
+
+            return aux_account;
+
+        }
     }
 
-    public void setClients(HashMap<String, Client> clients) {
-        this.clients = clients;
+    public Client editClient(Client client) {
+        if(this.clients.containsKey(client.getClientId())) {
+            return this.clients.put(client.getClientId(), client);
+        } else {
+            Client aux_client = new Client();
+
+            return aux_client;
+
+        }
     }
-*/
 
     ////////////////// OTHERS
+    public Employee getEmployee(String employeeId){
+        return this.bankEmployees.get(employeeId);
+    }
+
+    public BankAccount getAccount(String accountId){
+        return this.accounts.get(accountId);
+    }
+
+    public Client getClient(String clientId){
+        return this.clients.get(clientId);
+    }
+
+    public Employee addEmployee(Employee bankEmployee) {
+        return this.bankEmployees.put(bankEmployee.getEmployeeId(), bankEmployee);
+    }
+
+    public BankAccount addAccount(BankAccount account) {
+        return this.accounts.put(account.getIdAccount(), account);
+    }
+
+    public Client addClient(Client client) {
+        return this.clients.put(client.getClientId(), client);
+    }
+
 
     ////////////////// OVERRIDDEN
 
