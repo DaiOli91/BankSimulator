@@ -1,5 +1,6 @@
 package classes;
 
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -8,12 +9,14 @@ public class BankAccount {
     private String idAccount;
     private double balance;
     private int type; //as in 1 for Current Account, 2 for Salary Account and 3 for Fixed Deposit Account
+    private ArrayList<Transaction> lastmovements; //If this is for a cash machine, they only display a certain amount of transactions
 
     ////////////////// CONSTRUCTORS
     public BankAccount() { //default type = 2 : Salary Account- Balance= 0;
         this.idAccount = "";
         this.balance = 0;
         this.type = 2;
+        this.lastmovements = new ArrayList<>();
     }
 
     public BankAccount(int type) {
@@ -33,6 +36,13 @@ public class BankAccount {
 
     public int getType() {
         return type;
+    }
+
+    public String getLastMovements(){
+        //TODO return only the last 10 elements of the list - maybe get the size in a local variable
+        //TODO and use it as a decrease counter
+        StringBuilder sb = new StringBuilder();
+        return this.lastmovements.toString();
     }
 
 
@@ -56,6 +66,10 @@ public class BankAccount {
 
     public void setType(int type) {
         this.type = type;
+    }
+
+    public boolean addTransaction(Transaction transaction){
+        return this.lastmovements.add(transaction);
     }
 
 
