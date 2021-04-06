@@ -1,7 +1,12 @@
-# practicalAssignment1
+# BankSimulator
 first practical assignment for Computer Lab 3 - UTN FRMDP
 
 /////////////////////////////
+Includes: Inheritance, Polimorphism, abstract classes, interfaces, Overridden methods (ToString, Equals, HashCode), Collections (HashMap, ArrayList), Operations with UUID and LocalDate/LocalDateTime classes
+
+
+
+This is a project based on the following exercises proposed by the professor:
 
 Model an object called Employee with the following characteristics: ID, name,
 last name and salary. 
@@ -41,9 +46,10 @@ Perform the following operations:
 2. Make a credit operation of 2,500.
 3. Place a buy trade for 1500.
 4. Make a buy trade for 30,000.
-5. Print the account values ​​on the screen and verify that the balance is right.
+5. Print the account values on the screen and verify that the balance is right.
 
 /////////////////////////////
+Original text:
 Modele el objeto Empleado que posee las siguientes características, dni, nombre,
 apellido y salario. El mismo debe contar con la posibilidad de calcular el salario
 anual. A su vez se requiere otro método que permita aumentar el salario
