@@ -61,19 +61,85 @@ public class BankSystem {
 
                             break;
                         default:
-                            System.out.println("\nI am afraid this option is not available.");
+                            System.out.println("\nThis option is not available.");
                     }
 
 
                     //  end of Case1 main Switch
                     break;
                 case 2:
-                    System.out.println("\nOption 2.- EMPLOYEES\n");
-                    // TODO Employees option
+                    System.out.println("\nOption 1.- EMPLOYEES\n");
+                    System.out.println("\nWhat would you like to do?\n");
+                    System.out.println("1.- See Employees List");
+                    System.out.println("2.- Look for an Employee");
+                    System.out.println("3.- Add a new Employee");
+                    System.out.println("4.- Modify an Employee");
+                    System.out.println("Your choice: ");
+                    this.option = scan.nextInt();
+                    switch (this.option) {
+                        case 1:
+                            System.out.println("\nOption 1.- Show Employees List\n");
+                            System.out.println(this.LocalBank.employeesToString());
+
+                            break;
+                        case 2:
+                            System.out.println("\nOption 2.- Look for an Employee\n");
+                            System.out.println("\nPlease enter the Employee Id Number\n");
+                            //TODO search client
+
+                            break;
+                        case 3:
+                            System.out.println("\nOption 3.- Add a new Employee\n");
+                            //TODO add a client
+
+                            break;
+                        case 4:
+                            System.out.println("\nOption 4.- Modify an Employee\n");
+                            System.out.println("\nPlease enter the Employee Id Number\n");
+                            //TODO modify client
+
+                            break;
+                        default:
+                            System.out.println("\nThis option is not available.");
+                    }
                     break;
+                    // end of Case 2 Main Switch
                 case 3:
-                    System.out.println("\nOption 3.- ACCOUNTS\n");
-                    //  TODO Accounts option
+                    System.out.println("\nOption 1.- ACCOUNTS\n");
+                    System.out.println("\nWhat would you like to do?\n");
+                    System.out.println("1.- See Accounts List");
+                    System.out.println("2.- Look for an Account");
+                    System.out.println("3.- Add a new Account");
+                    System.out.println("4.- Modify an Account");
+                    System.out.println("Your choice: ");
+                    this.option = scan.nextInt();
+                    switch (this.option) {
+                        case 1:
+                            System.out.println("\nOption 1.- Show Accounts List\n");
+                            System.out.println(this.LocalBank.bankAccountsToString());
+
+                            break;
+                        case 2:
+                            System.out.println("\nOption 2.- Look for an Account\n");
+                            System.out.println("\nPlease enter the Account Id Number\n");
+                            //as an option, a person could enter the Client (owner- ClientId) and bring back all the accounts associated to it
+                            //TODO search client
+
+                            break;
+                        case 3:
+                            System.out.println("\nOption 3.- Add a new Account\n");
+                            //TODO add a client
+
+                            break;
+                        case 4:
+                            System.out.println("\nOption 4.- Modify an Account\n");
+                            System.out.println("\nPlease enter the Account Id Number\n");
+                            //TODO modify client
+
+                            break;
+                        default:
+                            System.out.println("\nThis option is not available.");
+                    }
                     break;
                 case 4:
                     System.out.println("\nOption 4.- Cash Machine Simulator\n");
